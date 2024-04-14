@@ -1,36 +1,12 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using Microsoft.VisualBasic.Devices;
-using Microsoft.VisualBasic;
-using System;
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Net;
-using System.Reflection;
-using System.Runtime.ConstrainedExecution;
-using System.Runtime.Intrinsics.X86;
-using System.Text;
-using System.Threading.Tasks;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static WindowsHooks.InputSimulator;
-using System.Windows.Forms;
-
-namespace WindowsHooks
+﻿namespace WindowsHooks
 {
-    internal class virtual_keycodes
+    internal class Keycodes
     {
-        public ushort virtual_keycodes(string info)
+        public ushort convertKeycode(string key)
         {
             ushort returnInfo = new ushort();
 
-            switch (info)
+            switch (key)
             {
                 case "VK_LBUTTON": // left mouse button
                     returnInfo = 0x01;

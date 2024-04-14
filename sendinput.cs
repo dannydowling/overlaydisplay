@@ -22,8 +22,6 @@ namespace WindowsHooks
             public MOUSEINPUT mi;
             [FieldOffset(0)]
             public KEYBDINPUT ki;
-            [FieldOffset(0)]
-            public HARDWAREINPUT hi;
         }
 
         [StructLayout(LayoutKind.Sequential)]
@@ -51,14 +49,13 @@ namespace WindowsHooks
         public const uint KEYEVENTF_KEYDOWN = 0x0000;
         public const uint KEYEVENTF_KEYUP = 0x0002;
 
-        public const ushort VK_A = 0x41; // Virtual key code for 'A'
+       // public const ushort VK_A = 0x41; // Virtual key code for 'A'
 
         public void KeyboardInput(ushort keycode)
         {
             SendKeyPress(keycode);
             SendKeyRelease(keycode);
         }
-
         public static void SendKeyPress(ushort keyCode)
         {
             INPUT[] inputs = new INPUT[1];
